@@ -1214,6 +1214,27 @@
                 grid-template-columns: 1fr;
             }
         }
+        @media (max-width: 768px) {
+    header {
+        padding: 8px 0; /* Reduced from 15px */
+    }
+    
+    .logo {
+        font-size: 1.4rem; /* Reduced from 1.8rem */
+    }
+    
+    .logo i {
+        font-size: 1.6rem; /* Reduced from 2rem */
+    }
+    
+    .mobile-menu-btn {
+        font-size: 1.2rem; /* Reduced from 1.5rem */
+    }
+    
+    .nav-links {
+        top: 60px; /* Adjusted for smaller header */
+    }
+        }
     </style>
 </head>
 <body>
@@ -2029,6 +2050,22 @@
 
         // Initialize terminal input
         addTerminalInput();
+        // Fix initial scroll position
+window.addEventListener('load', () => {
+    // Disable browser's automatic scroll restoration
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    
+    // Force scroll to top
+    window.scrollTo(0, 0);
+    
+    // Remove any hash from URL without reloading
+    if (window.location.hash) {
+        history.replaceState(null, null, ' ');
+    }
+});
     </script>
+    
 </body>
 </html>
